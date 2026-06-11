@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-bg-base text-content-primary font-sans antialiased;
+    margin: 0;
+    text-rendering: optimizeLegibility;
+  }
+
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  *::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    @apply bg-border-strong;
+    background-clip: content-box;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-bg-base;
+  }
+}
+
+@layer components {
+  /* Loading skeleton shimmer surface. */
+  .skeleton {
+    @apply relative overflow-hidden bg-bg-muted rounded-md;
+  }
+  .skeleton::after {
+    content: '';
+    @apply absolute inset-0 -translate-x-full animate-shimmer;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.04),
+      transparent
+    );
+  }
+
+  /* Minimal markdown rendering for the text/markdown preview. */
+  .prose-drivelens {
+    @apply text-sm leading-relaxed text-content-secondary;
+  }
+  .prose-drivelens h1,
+  .prose-drivelens h2,
+  .prose-drivelens h3 {
+    @apply mb-3 mt-6 font-semibold text-content-primary;
+  }
+  .prose-drivelens h1 {
+    @apply text-xl;
+  }
+  .prose-drivelens h2 {
+    @apply text-lg;
+  }
+  .prose-drivelens h3 {
+    @apply text-base;
+  }
+  .prose-drivelens p {
+    @apply mb-3;
+  }
+  .prose-drivelens a {
+    @apply text-accent underline underline-offset-2;
+  }
+  .prose-drivelens ul,
+  .prose-drivelens ol {
+    @apply mb-3 ml-5 list-disc space-y-1;
+  }
+  .prose-drivelens ol {
+    @apply list-decimal;
+  }
+  .prose-drivelens code {
+    @apply rounded bg-bg-overlay px-1.5 py-0.5 font-mono text-2xs text-content-primary;
+  }
+  .prose-drivelens pre {
+    @apply mb-3 overflow-x-auto rounded-lg bg-bg-subtle p-3;
+  }
+  .prose-drivelens pre code {
+    @apply bg-transparent p-0;
+  }
+  .prose-drivelens blockquote {
+    @apply border-l-2 border-border pl-3 italic text-content-tertiary;
+  }
+  .prose-drivelens table {
+    @apply mb-3 w-full border-collapse text-2xs;
+  }
+  .prose-drivelens th,
+  .prose-drivelens td {
+    @apply border border-border-subtle px-2 py-1 text-left;
+  }
+  .prose-drivelens img {
+    @apply my-3 max-w-full rounded-lg;
+  }
+  .prose-drivelens hr {
+    @apply my-5 border-border-subtle;
+  }
+}

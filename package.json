@@ -1,0 +1,42 @@
+{
+  "name": "drivelens",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "A client-side SPA that layers tagging, favorites, search, and previews on top of Google Drive.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "preview": "vite preview",
+    "lint": "eslint . --ext ts,tsx"
+  },
+  "dependencies": {
+    "cmdk": "^1.0.4",
+    "dexie": "^4.0.10",
+    "dexie-react-hooks": "^1.1.7",
+    "fuse.js": "^7.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^9.0.1",
+    "remark-gfm": "^4.0.0",
+    "zustand": "^4.5.5"
+  },
+  "devDependencies": {
+    "@types/google.accounts": "^0.0.15",
+    "@types/node": "^22.10.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@typescript-eslint/eslint-plugin": "^8.15.0",
+    "@typescript-eslint/parser": "^8.15.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  }
+}
