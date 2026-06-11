@@ -7,9 +7,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
+    "build:gh-pages": "tsc --noEmit && cross-env GITHUB_PAGES=true vite build",
     "typecheck": "tsc --noEmit",
     "preview": "vite preview",
-    "lint": "eslint . --ext ts,tsx"
+    "lint": "eslint . --ext ts,tsx",
+    "predeploy": "npm run build:gh-pages",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "cmdk": "^1.0.4",
@@ -31,6 +34,8 @@
     "@typescript-eslint/parser": "^8.15.0",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
+    "cross-env": "^7.0.3",
+    "gh-pages": "^6.2.0",
     "eslint": "^8.57.1",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.14",
